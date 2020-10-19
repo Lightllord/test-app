@@ -1,0 +1,13 @@
+@import '~@angular/material/theming';
+$my-primary: mat-palette($mat-blue, 700, 300, 900);
+$my-accent:  mat-palette($mat-grey, 300, 50, 600);
+
+$background-darker-color: map_get($mat-gray, 100);
+$subdued-text-color: map_get($mat-gray, 400);
+
+$my-theme: mat-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent
+  )
+));
