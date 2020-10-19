@@ -30,7 +30,11 @@ const routes: Routes = [
             ],
           },
         ],
-      }
+      },
+      {
+        path: 'item',
+        loadChildren: () => import('./mail-item/mail-item.module').then(m => m.MailItemModule),
+      },
     ],
   },
 ];

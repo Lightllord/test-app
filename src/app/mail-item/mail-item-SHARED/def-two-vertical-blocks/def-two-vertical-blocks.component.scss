@@ -1,0 +1,28 @@
+.def-two-vertical-blocks {
+  display: flex;
+  flex-direction: column;
+
+  &__head {
+
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    min-height: 100px;
+    display: flex;
+  }
+
+  &__block {
+    height: 100%;
+    overflow-y: auto;
+
+    &--left {
+      flex: 1 1 auto;
+      min-width: 100px;
+    }
+
+    &--right {
+      flex: 0 0 500px;
+    }
+  }
+}

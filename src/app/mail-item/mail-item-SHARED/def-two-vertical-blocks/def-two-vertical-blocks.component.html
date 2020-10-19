@@ -1,0 +1,15 @@
+<mat-divider></mat-divider>
+<div class="def-two-vertical-blocks__body">
+  <div class="def-two-vertical-blocks__block def-two-vertical-blocks__block--left">
+    <ng-container *ngIf="leftBlock"
+                  [ngTemplateOutlet]="leftBlock">
+    </ng-container>
+  </div>
+  <mat-divider [vertical]="true"></mat-divider>
+  <div class="def-two-vertical-blocks__block def-two-vertical-blocks__block--right">
+    <ng-container *ngIf="rightBlock"
+                  [ngTemplateOutlet]="rightBlock">
+    </ng-container>
+  </div>
+</div>
+<mat-divider></mat-divider>
