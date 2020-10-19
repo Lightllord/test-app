@@ -1,0 +1,34 @@
+<div class="mails-list-container">
+  <div class="def-container">
+    <div class="mails-list-container__head">
+      <div class="def-header" [ngSwitch]="type">
+        <ng-container *ngSwitchCase="'sent'">Отправленные</ng-container>
+        <ng-container *ngSwitchCase="'draft'">Черновики</ng-container>
+      </div>
+      <div>
+        <button mat-raised-button color="primary" (click)="newItem()">Новая рассылка</button>
+      </div>
+    </div>
+    <div class="mails-list-container__additional-info">
+      <p>Вы назодитесь в разделе рыссылок. Вы можете ее осуществить по вашей базе пользователей</p>
+      <p class="mails-list-container__links-line">
+        <a mat-button color="primary" class="mails-list-container__link">Что такое ручные рассылки</a>
+        <a mat-button color="primary" class="mails-list-container__link">C чего начать</a>
+        <a mat-button color="primary" class="mails-list-container__link">Обучающее видео</a>
+      </p>
+    </div>
+    <div class="def-vertical-space def-container"></div>
+    <mat-divider></mat-divider>
+    <div class="def-vertical-space"></div>
+    <div class="mails-list-container__badges-line">
+      <button class="mails-list-container__badges-line-button" mat-raised-button color="accent">Любой отправитель</button>
+      <button class="mails-list-container__badges-line-button" mat-raised-button color="accent">Лиды и пользователи</button>
+      <button class="mails-list-container__badges-line-button" mat-raised-button color="accent">Любой</button>
+    </div>
+    <div class="def-vertical-space"></div>
+    <p class="def-header">{{list?.length}} рассылки</p>
+  </div>
+  <div class="mails-list-container__mails-list-container">
+    <app-mails-list [list]="list"></app-mails-list>
+  </div>
+</div>

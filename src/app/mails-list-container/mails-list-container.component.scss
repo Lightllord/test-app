@@ -1,0 +1,38 @@
+.mails-list-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__additional-info {
+
+  }
+
+  &__links-line {
+    margin: 0 -5px;
+  }
+
+  &__link {
+    padding: 0 5px;
+  }
+
+  &__devider {
+    padding: 1rem 0;
+  }
+
+  &__badges-line {
+    &-button {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__mails-list-container {
+    flex: 1 1 auto;
+    min-height: 100px;
+    overflow-y: auto;
+  }
+}
