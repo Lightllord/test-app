@@ -1,3 +1,4 @@
+@import '~@angular/material/theming';
 @import 'my-theme';
 
 .def-header {
@@ -11,4 +12,25 @@
 
 .def-vertical-space {
   padding: 0.5rem 0;
+}
+
+.mat-button.mat-success,
+  .mat-stroked-button.mat-success {
+  color: mat-color($mat-green, 500);
+}
+.mat-button.mat-success:hover,
+.mat-stroked-button.mat-success:hover {
+  background-color: white;
+}
+
+.mat-raised-button.mat-success,
+.mat-flat-button.mat-success,
+.mat-fab.mat-success,
+.mat-mini-fab.mat-success {
+  color: white;
+  background-color: mat-color($mat-green, 500);
+}
+
+.mat-icon-button.mat-success {
+  color: mat-color($mat-green, 500);
 }
