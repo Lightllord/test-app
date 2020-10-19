@@ -1,0 +1,11 @@
+<div class="menu">
+  <div class="menu__head">
+    {{menuTitle}}
+  </div>
+  <div class="menu__body">
+    <ng-container class="" *ngFor="let item of menuItemList">
+      <div *ngIf="item.disabled" class="menu__item menu__item--disabled">{{item.name}}</div>
+      <div *ngIf="!item.disabled" class="menu__item" [routerLink]="item.path" [routerLinkActive]="'menu__item--active'">{{item.name}}</div>
+    </ng-container>
+  </div>
+</div>

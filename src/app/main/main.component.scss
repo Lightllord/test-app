@@ -1,0 +1,17 @@
+@import 'src/styles/my-theme';
+
+.main {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  &__left-menu-container {
+    background-color: $background-darker-color;
+    flex: 0 0 220px;
+  }
+
+  &__mails-container {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}

@@ -1,0 +1,34 @@
+@import 'src/styles/my-theme';
+
+.menu {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__head {
+    margin-bottom: 1.5rem;
+    flex: 0 0 auto;
+    font-weight: 600;
+    font-size: 1.15rem;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    min-height: 300px;
+    overflow-y: auto;
+  }
+
+  &__item {
+    cursor: pointer;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+
+    &--active {
+      color: mat-color(map-get($my-theme, primary));
+    }
+
+    &--disabled {
+      cursor: default;
+    }
+  }
+}
