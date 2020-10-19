@@ -1,0 +1,53 @@
+.third-step-sending {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__blocks {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 100px;
+  }
+
+  &__tools {
+    flex: 0 0 auto;
+  }
+
+  &__tools-button {
+    margin-right: 1rem;
+  }
+
+  &__header1 {
+    margin-bottom: 0.5rem;
+  }
+
+  &__form-field {
+    width: 100%;
+
+    &--without-gap::ng-deep {
+      margin-bottom: 0;
+    }
+  }
+
+  &__row {
+    margin-bottom: 1rem;
+
+    &--last {
+      margin-bottom: 0;
+    }
+  }
+
+  &__small-text {
+    font-size: 0.85rem;
+  }
+
+  &__radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  &__radio-button {
+    margin: 5px;
+  }
+}

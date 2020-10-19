@@ -1,0 +1,54 @@
+<div class="third-step-sending">
+  <app-def-two-vertical-blocks class="third-step-sending__blocks">
+    <ng-template appDefLeftBlock>
+      <div class="def-container">
+        <div class="def-header third-step-sending__header1">
+          Мы отправим это сообщение 25 пользователям
+        </div>
+        <mat-form-field class="third-step-sending__form-field">
+          <mat-label>Введите заголовок</mat-label>
+          <input matInput placeholder="Заголовок" [formControl]="control">
+        </mat-form-field>
+        <div class="def-header third-step-sending__header1">
+          Выберите подписчиков, используя правила
+        </div>
+        <mat-form-field appearance="fill" class="third-step-sending__form-field third-step-sending__form-field--without-gap">
+          <mat-label>Тег сообщения для Facebook</mat-label>
+          <mat-select [(ngModel)]="mock">
+            <mat-option *ngFor="let social2 of socials2" [value]="social2">
+              {{social2}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="third-step-sending__small-text">
+          Теги позволяют отправлять сообщения после 24 часов от последнего взаимодействия с подписчиком. Убедитесь...
+        </div>
+      </div>
+      <div class="def-container">
+        <div class="def-header third-step-sending__header1">
+          Время отправки
+        </div>
+        <mat-radio-group class="third-step-sending__radio-group"
+                         [(ngModel)]="timeSelected">
+          <mat-radio-button class="third-step-sending__radio-button" [value]="times[0]">
+            {{times[0]}}
+          </mat-radio-button>
+          <mat-radio-button disabled class="third-step-sending__radio-button" [value]="times[0]">
+            {{times[1]}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="def-container">
+        <button mat-raised-button color="success" [disabled]="allForm.invalid">ОТПРАВИТЬ СЕЙЧАС</button>
+      </div>
+    </ng-template>
+    <ng-template appDefRightBlock>
+      <div class="def-container">
+        ...
+      </div>
+    </ng-template>
+  </app-def-two-vertical-blocks>
+  <div class="third-step-sending__tools def-container">
+    <button class="third-step-sending__tools-button" mat-button matStepperPrevious color="primary">НАЗАД</button>
+  </div>
+</div>

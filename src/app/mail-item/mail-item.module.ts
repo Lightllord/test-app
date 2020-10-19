@@ -10,13 +10,15 @@ import { MailItemSharedModule } from './mail-item-SHARED/mail-item-shared.module
 import { MailItemService } from './mail-item.service';
 import { MailItemComponent } from './mail-item/mail-item.component';
 import { SecondStepChannelComponent } from './mail-item-constructor/second-step-channel/second-step-channel.component';
+import { ThirdStepSendingComponent } from './mail-item-constructor/third-step-sending/third-step-sending.component';
 
 @NgModule({
   declarations: [
     MailItemComponent,
     MailItemConstructorComponent,
     FirstStepTextComponent,
-    SecondStepChannelComponent
+    SecondStepChannelComponent,
+    ThirdStepSendingComponent
   ],
   imports: [
     CommonModule,

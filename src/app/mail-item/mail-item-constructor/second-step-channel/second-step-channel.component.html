@@ -1,0 +1,48 @@
+<div class="second-step-channel">
+  <app-def-two-vertical-blocks class="second-step-channel__blocks">
+    <ng-template appDefLeftBlock>
+      <div class="def-container">
+        <div class="second-step-channel__row">
+          <div class="def-header second-step-channel__header1">
+            Выберите канал
+          </div>
+          <mat-form-field appearance="fill" class="second-step-channel__form-field">
+            <mat-label>Канал</mat-label>
+            <mat-select [formControl]="control">
+              <mat-option>Не выбран</mat-option>
+              <mat-option *ngFor="let social of socials" [value]="social">
+                {{social}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="control.hasError('required')">Выберите канал</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="second-step-channel__row second-step-channel__row--last">
+          <div class="def-header second-step-channel__header1">
+            Выберите подписчиков, используя правила
+          </div>
+          <mat-form-field appearance="fill" class="second-step-channel__form-field">
+            <mat-label>Подписчики, которые соответствуют</mat-label>
+            <mat-select [(ngModel)]="mock">
+              <mat-option *ngFor="let social2 of socials2" [value]="social2">
+                {{social2}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="second-step-channel__tools">
+          <button class="second-step-channel__tools-button" mat-button color="primary">ДОБАВИТЬ ПРАВИЛО</button>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template appDefRightBlock>
+      <div class="def-container">
+        ...
+      </div>
+    </ng-template>
+  </app-def-two-vertical-blocks>
+  <div class="second-step-channel__tools def-container">
+    <button class="second-step-channel__tools-button" mat-button matStepperPrevious color="primary">НАЗАД</button>
+    <button class="second-step-channel__tools-button" mat-raised-button matStepperNext color="primary">ДАЛЕЕ</button>
+  </div>
+</div>

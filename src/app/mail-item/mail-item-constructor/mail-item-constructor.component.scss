@@ -1,0 +1,25 @@
+.mail-item-constructor {
+  &::ng-deep {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .mat-horizontal-stepper-header-container {
+      flex: 0 0 auto;
+    }
+
+    .mat-horizontal-content-container {
+      flex: 1 1 auto;
+      min-height: 100px;
+      padding: 0;
+    }
+
+    .mat-horizontal-stepper-content {
+      height: 100%;
+
+      &[aria-expanded=false] {
+        height: 0;
+      }
+    }
+  }
+}

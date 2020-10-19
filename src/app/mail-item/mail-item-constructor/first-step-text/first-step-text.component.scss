@@ -1,0 +1,49 @@
+@import 'src/styles/my-theme';
+
+.first-step-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__blocks {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 100px;
+  }
+
+  &__text {
+  }
+
+  &__textarea {
+    padding: 0.5rem;
+    background-color: $background-darker-color;
+    margin-bottom: 0.5rem;
+  }
+
+  &__header1 {
+    margin-bottom: 1rem;
+  }
+
+  &__header2 {
+    margin-bottom: 0.5rem;
+  }
+
+  &__textarea-tools {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__form-field {
+    width: 100%;
+  }
+
+  &__tools {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__tools-button {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}

@@ -1,0 +1,14 @@
+<mat-horizontal-stepper class="mail-item-constructor" #stepper>
+  <mat-step [stepControl]="fDescription" errorMessage="Введите сообщение.">
+    <ng-template matStepLabel>Сообщение</ng-template>
+    <app-first-step-text [control]="fDescription"></app-first-step-text>
+  </mat-step>
+  <mat-step [stepControl]="fPlatform" errorMessage="Выберите канал.">
+    <ng-template matStepLabel>Сегментация</ng-template>
+    <app-second-step-channel [control]="fPlatform"></app-second-step-channel>
+  </mat-step>
+  <mat-step [stepControl]="fName" errorMessage="Ввведите заголовок.">
+    <ng-template matStepLabel>Отправка</ng-template>
+    <app-third-step-sending [control]="fName" [allForm]="form"></app-third-step-sending>
+  </mat-step>
+</mat-horizontal-stepper>

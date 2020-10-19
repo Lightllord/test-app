@@ -1,0 +1,38 @@
+<div class="first-step-text">
+  <app-def-two-vertical-blocks class="first-step-text__blocks">
+    <ng-template appDefLeftBlock>
+      <div class="first-step-text__text def-container">
+        <div class="first-step-text__header1 def-header">Создайте сообщение</div>
+        <div class="first-step-text__textarea">
+          <div class="first-step-text__header1 def-header">Текстовое сообщение</div>
+          <mat-form-field class="first-step-text__form-field">
+            <mat-label>Текст сообщения</mat-label>
+            <textarea matInput placeholder="Текст сообщения" rows="4" [formControl]="control"></textarea>
+          </mat-form-field>
+          <div class="first-step-text__textarea-tools">
+            <button mat-button color="primary">ДОБАВИТЬ КНОПКУ</button>
+          </div>
+        </div>
+        <button mat-stroked-button color="primary">БЫСТРЫЙ ОТВЕТ</button>
+      </div>
+      <div class="def-container">
+        <div class="def-header first-step-text__header2">Добавить карточку</div>
+        <div class="first-step-text__tools">
+          <button class="first-step-text__tools-button" mat-stroked-button color="primary">ТЕКСТ</button>
+          <button class="first-step-text__tools-button" mat-stroked-button color="primary">КАРТИНКА</button>
+          <button class="first-step-text__tools-button" mat-stroked-button color="primary">ФАЙЛ</button>
+          <button class="first-step-text__tools-button" mat-stroked-button color="primary">ВОПРОС</button>
+          <button class="first-step-text__tools-button" mat-stroked-button color="primary">ВИДЕО</button>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template appDefRightBlock>
+      <div class="def-container">
+        ...
+      </div>
+    </ng-template>
+  </app-def-two-vertical-blocks>
+  <div class="first-step-text__tools def-container">
+    <button mat-raised-button matStepperNext color="primary">Далее</button>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { MailItemConstructorComponent } from './mail-item-constructor/mail-item-constructor.component';
 import { MailItemComponent } from './mail-item/mail-item.component';
 
 const routes: Routes = [
@@ -10,15 +11,18 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'new',
-        pathMatch: 'full',
+        pathMatch: 'full'
       },
-    ],
-  },
+      {
+        path: ':id',
+        component: MailItemConstructorComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class MailItemRoutingModule {
-}
+export class MailItemRoutingModule { }
