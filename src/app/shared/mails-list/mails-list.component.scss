@@ -1,0 +1,27 @@
+@import 'src/styles/my-theme';
+
+.mails-list {
+
+  &::ng-deep {
+    width: 100%;
+
+    th.mat-header-cell {
+      border-bottom: 0;
+    }
+
+    td.mat-cell {
+      border-bottom: 0;
+    }
+  }
+
+  &__cell {
+    &--name {
+
+    }
+  }
+
+  &__subdued-text {
+    font-size: 0.9rem;
+    color: $subdued-text-color;
+  }
+}

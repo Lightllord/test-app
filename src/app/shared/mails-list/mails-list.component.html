@@ -1,0 +1,71 @@
+<table mat-table class="mails-list" [dataSource]="list">
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox></mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox></mat-checkbox>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Название</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <div class="mails-list__cell mails-list__cell--name">
+        <div>{{element.name}}</div>
+        <div class="mails-list__subdued-text">{{element.description}}</div>
+        <div class="mails-list__subdued-text">{{element.platform}}</div>
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef>Статус</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <div class="mails-list__cell mails-list__cell">
+        Активна
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="count">
+    <mat-header-cell *matHeaderCellDef>Отправлено</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <div class="mails-list__cell mails-list__cell">
+        {{element.count}}
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="watches">
+    <mat-header-cell *matHeaderCellDef>Просмотров</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <div class="mails-list__cell mails-list__cell">
+        {{element.watches}}
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef>Создана</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <div class="mails-list__cell mails-list__cell">
+        {{element.date | date}}
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="account">
+    <mat-header-cell *matHeaderCellDef>Агент</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <div class="mails-list__cell mails-list__cell">
+        {{element.account}}
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row class="ur-table__row"
+           *matRowDef="let row; columns: displayedColumns;">
+  </mat-row>
+</table>
