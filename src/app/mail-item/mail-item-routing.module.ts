@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MailItemConstructorComponent } from './mail-item-constructor/mail-item-constructor.component';
+import { MailItemGuardService } from './mail-item-guard.service';
 import { MailItemComponent } from './mail-item/mail-item.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
       },
       {
         path: ':id',
-        component: MailItemConstructorComponent
+        component: MailItemConstructorComponent,
+        canActivate: [MailItemGuardService]
       }
     ]
   }

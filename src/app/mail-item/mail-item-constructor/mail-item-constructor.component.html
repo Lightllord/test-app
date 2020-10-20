@@ -9,6 +9,6 @@
   </mat-step>
   <mat-step [stepControl]="fName" errorMessage="Ввведите заголовок.">
     <ng-template matStepLabel>Отправка</ng-template>
-    <app-third-step-sending [control]="fName" [allForm]="form" (saveSent)="onSaveSent()"></app-third-step-sending>
+    <app-third-step-sending [control]="fName" [disabled]="form.invalid" (saveSent)="onSaveSent()"></app-third-step-sending>
   </mat-step>
 </mat-horizontal-stepper>

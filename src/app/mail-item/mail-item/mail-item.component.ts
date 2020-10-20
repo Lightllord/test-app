@@ -24,6 +24,7 @@ export class MailItemComponent implements OnInit, OnDestroy {
       takeUntil(this.unsubscriber$),
     ).subscribe(res => {
       this.item = res;
+      console.log(this.item);
     });
   }
 
@@ -33,6 +34,7 @@ export class MailItemComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.unsubscriber$.next(true);
+    this.mailItemService.deleteItem();
   }
 
   saveDraft(): void {

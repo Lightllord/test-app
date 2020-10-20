@@ -24,4 +24,10 @@
     font-size: 0.9rem;
     color: $subdued-text-color;
   }
+
+  &__row {
+    &--selectable {
+      cursor: pointer;
+    }
+  }
 }

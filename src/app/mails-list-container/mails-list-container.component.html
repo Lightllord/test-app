@@ -29,6 +29,6 @@
     <p class="def-header">{{list?.length}} рассылки</p>
   </div>
   <div class="mails-list-container__mails-list-container">
-    <app-mails-list [list]="list"></app-mails-list>
+    <app-mails-list [list]="list" [selectable]="type === 'draft'" (rowSelected)="selectRow($event)"></app-mails-list>
   </div>
 </div>

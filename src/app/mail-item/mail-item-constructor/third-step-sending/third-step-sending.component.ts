@@ -9,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class ThirdStepSendingComponent {
   @Input() control: FormControl;
-  @Input() allForm: FormGroup;
+  @Input() disabled = false;
   @Output() saveSent = new EventEmitter<any>();
   socials2 = [
     'Уведомление о событии',

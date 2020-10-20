@@ -65,7 +65,9 @@
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row class="ur-table__row"
-           *matRowDef="let row; columns: displayedColumns;">
+  <mat-row *matRowDef="let row; columns: displayedColumns;"
+           class="mails-list__row"
+           [class.mails-list__row--selectable]="selectable"
+           (click)="selectRow(row)">
   </mat-row>
 </table>

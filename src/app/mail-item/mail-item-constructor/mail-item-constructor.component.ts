@@ -1,5 +1,5 @@
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -8,7 +8,6 @@ import { takeUntil } from 'rxjs/operators';
   selector: 'app-mail-item-constructor',
   templateUrl: './mail-item-constructor.component.html',
   styleUrls: ['./mail-item-constructor.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [{
     provide: STEPPER_GLOBAL_OPTIONS, useValue: { showError: true },
   }],
@@ -38,13 +37,14 @@ export class MailItemConstructorComponent implements OnChanges, OnDestroy {
 
   constructor(private fb: FormBuilder) {
     this.form.valueChanges.pipe(
-      takeUntil(this.unsubscriber$)
+      takeUntil(this.unsubscriber$),
     ).subscribe(res => {
       this.itemChanged.emit(res);
     });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
     this.form.reset(this.item || {});
   }
 

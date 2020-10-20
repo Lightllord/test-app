@@ -19,9 +19,9 @@ export class MailItemGuardService implements CanActivate {
     } else {
       const id = +idString;
       if (id) {
-
+        return !!this.mailItemService.findAndSelect(id);
       } else {
-
+        return false;
       }
     }
   }

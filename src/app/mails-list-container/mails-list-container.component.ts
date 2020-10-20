@@ -39,4 +39,11 @@ export class MailsListContainerComponent implements OnInit, OnDestroy {
   newItem(): void {
     this.router.navigate(['item', 'new']);
   }
+
+  selectRow(row: any): void {
+    console.log(row);
+    if (row.id) {
+      this.router.navigate(['item', row.id]);
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { ServerService } from '../server.service';
 
 @Injectable()
 export class MailItemService {
@@ -9,7 +10,7 @@ export class MailItemService {
     return this._item$.getValue();
   }
 
-  constructor() {
+  constructor(private server: ServerService) {
   }
 
   createNew(): any {
@@ -18,5 +19,20 @@ export class MailItemService {
     };
     this._item$.next(newItem);
     return newItem;
+  }
+
+  findAndSelect(id: number): any {
+    const item = this.server.findById(id);
+    if (item) {
+      this._item$.next(item);
+    } else {
+      this.deleteItem();
+    }
+    console.log(item);
+    return item;
+  }
+
+  deleteItem(): void {
+    this._item$.next(null);
   }
 }

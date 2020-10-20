@@ -77,7 +77,7 @@ export class ServerService {
     },
   ];
   list: any[];
-  maxId: number;
+  maxId = 1;
 
   constructor() {
     this.loadListFromStorage();
@@ -102,7 +102,8 @@ export class ServerService {
 
   loadListFromStorage(): void {
     const setId = () => {
-      this.list.forEach(el => this.maxId = (el.id >= this.maxId) ? el.id++ : this.maxId);
+      this.list.forEach(el => this.maxId = (el.id >= this.maxId) ? el.id : this.maxId);
+      this.maxId++;
     };
     try {
       const mailsString = localStorage.getItem('mails');
@@ -160,5 +161,9 @@ export class ServerService {
     });
     this.updateMails(this.list);
     this.maxId++;
+  }
+
+  findById(id: number): any {
+    return this.list.find(el => el.id === id);
   }
 }
