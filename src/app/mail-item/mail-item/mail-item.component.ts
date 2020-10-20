@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { ServerService } from '../../server.service';
 import { MailItemService } from '../mail-item.service';
 
 @Component({
@@ -13,8 +14,9 @@ import { MailItemService } from '../mail-item.service';
 export class MailItemComponent implements OnInit, OnDestroy {
   unsubscriber$ = new Subject<boolean>();
   item: any;
+  formValue: any;
 
-  constructor(private router: Router, private fb: FormBuilder, private mailItemService: MailItemService) {
+  constructor(private router: Router, private fb: FormBuilder, private mailItemService: MailItemService, private server: ServerService) {
   }
 
   ngOnInit(): void {
@@ -31,5 +33,19 @@ export class MailItemComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.unsubscriber$.next(true);
+  }
+
+  saveDraft(): void {
+    this.server.saveDraft(this.formValue);
+    this.router.navigate(['list', 'draft']);
+  }
+
+  saveSent(obj: any): void {
+    this.server.saveSent(obj);
+    this.router.navigate(['list', 'sent']);
+  }
+
+  changeItem(item): void {
+    this.formValue = item;
   }
 }

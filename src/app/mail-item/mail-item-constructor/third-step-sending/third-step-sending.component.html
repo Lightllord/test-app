@@ -39,7 +39,7 @@
         </mat-radio-group>
       </div>
       <div class="def-container">
-        <button mat-raised-button color="success" [disabled]="allForm.invalid">ОТПРАВИТЬ СЕЙЧАС</button>
+        <button mat-raised-button color="success" [disabled]="allForm.invalid" (click)="saveSent.emit()">ОТПРАВИТЬ СЕЙЧАС</button>
       </div>
     </ng-template>
     <ng-template appDefRightBlock>

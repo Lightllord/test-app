@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -10,6 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ThirdStepSendingComponent {
   @Input() control: FormControl;
   @Input() allForm: FormGroup;
+  @Output() saveSent = new EventEmitter<any>();
   socials2 = [
     'Уведомление о событии',
   ];

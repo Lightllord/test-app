@@ -3,10 +3,10 @@
     <div class="def-header">Новая рассылка</div>
     <div class="mail-item__head-button-group">
       <button class="mail-item__head-button" mat-button color="primary" (click)="cancel()">ОТМЕНА</button>
-      <button class="mail-item__head-button" mat-raised-button color="primary">СОХРАНИТЬ И ЗАКРЫТЬ</button>
+      <button class="mail-item__head-button" mat-raised-button color="primary" (click)="saveDraft()">СОХРАНИТЬ И ЗАКРЫТЬ</button>
     </div>
   </div>
   <div class="mail-item__body">
-    <app-mail-item-constructor [item]="item"></app-mail-item-constructor>
+    <app-mail-item-constructor [item]="item" (itemChanged)="changeItem($event)" (saveSent)="saveSent($event)"></app-mail-item-constructor>
   </div>
 </div>

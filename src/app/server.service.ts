@@ -80,10 +80,10 @@ export class ServerService {
   maxId: number;
 
   constructor() {
+    this.loadListFromStorage();
   }
 
   getMails(type: 'sent' | 'draft' | string): any[] {
-    this.loadListFromStorage();
     return this.list.filter(el => el.type === type);
   }
 
@@ -95,10 +95,10 @@ export class ServerService {
     }
   }
 
-  resetStorage = (): any[] => {
+  resetStorage(): any[] {
     this.updateMails(this.default);
     return this.default;
-  };
+  }
 
   loadListFromStorage(): void {
     const setId = () => {
@@ -116,5 +116,49 @@ export class ServerService {
       this.list = this.resetStorage();
       setId();
     }
+  }
+
+  saveDraft(draft: any): void {
+    if (draft.id) {
+      const found = this.list.find(el => el.id === draft.id);
+      if (found) {
+        Object.assign(found, draft);
+        this.updateMails(this.list);
+      }
+    } else {
+      this.list.push({
+        ...draft,
+        id: this.maxId,
+        status: 'Активна',
+        count: 240,
+        watches: 120,
+        date: new Date(),
+        account: 'Leroy Jenkins',
+        type: 'draft',
+      });
+      this.updateMails(this.list);
+      this.maxId++;
+    }
+  }
+
+  saveSent(massage: any): void {
+    if (massage.type === 'sent' && massage.id) {
+      const ind = this.list.findIndex(el => el.id === massage.id);
+      if (ind !== -1) {
+        this.list.splice(ind, 1);
+      }
+    }
+    this.list.push({
+      ...massage,
+      id: this.maxId,
+      status: 'Активна',
+      count: 240,
+      watches: 120,
+      date: new Date(),
+      account: 'Leroy Jenkins',
+      type: 'sent',
+    });
+    this.updateMails(this.list);
+    this.maxId++;
   }
 }
